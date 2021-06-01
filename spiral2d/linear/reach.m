@@ -1,4 +1,4 @@
-% Reachability analysis of a Neural Network ODE
+% Reachability analysis of a Neural ODE
 
 %% Define layers and neural ODE
 controlPeriod = 25; % total seconds
@@ -55,69 +55,27 @@ ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
 saveas(f,'spirallinear_0.1.png');
 
-f = figure;
-Star.plotRanges_2D(Rb,1,tvec,'b');
-hold on;
-plot(tvec,yyy(1,:),'r');
-xlabel('Time (s)');
-ylabel('x_1');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.1_1.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,2,tvec,'b');
-hold on;
-plot(tvec,yyy(2,:),'r');
-xlabel('Time (s)');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.1_2.png');
-
-%% Reachability run #2
-R0 = Star([1.95;-0.05],[2.05;0.05]);
-
-t = tic;
-Ra = neuralode.reach(R0); % Reachability
-ta = toc(t);
-
-% Plot results
-f = figure;
-Star.plotBoxes_2D_noFill(Ra,1,2,'b');
-hold on;
-plot(yyy(1,:),yyy(2,:),'r');
-Star.plotBoxes_2D(unsafeR,1,2,'m');
-xlabel('x_1');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.05.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,1,tvec,'b');
-hold on;
-plot(tvec,yyy(1,:),'r');
-xlabel('Time (s)');
-ylabel('x_1');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.05_1.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,2,tvec,'b');
-hold on;
-plot(tvec,yyy(2,:),'r');
-xlabel('Time (s)');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.05_2.png');
+% f = figure;
+% Star.plotRanges_2D(Rb,1,tvec,'b');
+% hold on;
+% plot(tvec,yyy(1,:),'r');
+% xlabel('Time (s)');
+% ylabel('x_1');
+% ax = gca; % Get current axis
+% ax.XAxis.FontSize = 15; % Set font size of axis
+% ax.YAxis.FontSize = 15;
+% saveas(f,'spirallinear_0.1_1.png');
+% 
+% f = figure;
+% Star.plotRanges_2D(Rb,2,tvec,'b');
+% hold on;
+% plot(tvec,yyy(2,:),'r');
+% xlabel('Time (s)');
+% ylabel('x_2');
+% ax = gca; % Get current axis
+% ax.XAxis.FontSize = 15; % Set font size of axis
+% ax.YAxis.FontSize = 15;
+% saveas(f,'spirallinear_0.1_2.png');
 
 %% Reachability run #2
 R0 = Star([1.8;-0.2],[2.2;0.2]);
@@ -139,28 +97,28 @@ ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
 saveas(f,'spirallinear_0.2.png');
 
-f = figure;
-Star.plotRanges_2D(Rb,1,tvec,'b');
-hold on;
-plot(tvec,yyy(1,:),'r');
-xlabel('Time (s)');
-ylabel('x_1');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.2_1.png');
+% f = figure;
+% Star.plotRanges_2D(Rb,1,tvec,'b');
+% hold on;
+% plot(tvec,yyy(1,:),'r');
+% xlabel('Time (s)');
+% ylabel('x_1');
+% ax = gca; % Get current axis
+% ax.XAxis.FontSize = 15; % Set font size of axis
+% ax.YAxis.FontSize = 15;
+% saveas(f,'spirallinear_0.2_1.png');
+% 
+% f = figure;
+% Star.plotRanges_2D(Rb,2,tvec,'b');
+% hold on;
+% plot(tvec,yyy(2,:),'r');
+% xlabel('Time (s)');
+% ylabel('x_2');
+% ax = gca; % Get current axis
+% ax.XAxis.FontSize = 15; % Set font size of axis
+% ax.YAxis.FontSize = 15;
+% saveas(f,'spirallinear_0.2_2.png');
 
-f = figure;
-Star.plotRanges_2D(Rb,2,tvec,'b');
-hold on;
-plot(tvec,yyy(2,:),'r');
-xlabel('Time (s)');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.2_2.png');
 
-
-save('reach.mat','ta','tb','tc');
+save('reach.mat','tb','tc','Rb','Rc');
 

@@ -21,4 +21,5 @@ cd ../..
 
 % 3 - MNIST
 cd mnist;
+addpath('data');
 run run_both.m; % Execute all mnist experiments 

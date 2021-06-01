@@ -31,101 +31,8 @@ neuralLayers = {layer1,odelayer,layer3};
 neuralode = NeuralODE(neuralLayers);
 tvec = 0:reachStep:controlPeriod;
 
-%% Reachability run #1
-% Setup
-x0 = [-1.4996;-0.4609]; % Initial state first trajectory
-unc = 0.01;
-lb = x0-unc;
-ub = x0+unc;
-R0 = Star(lb,ub);
 
-t = tic;
-Rb = neuralode.reach(R0); % Reachability
-ta = toc(t);
-yyy = neuralode.evaluate(x0); % Simulation
-
-% Plot results
-f = figure;
-Star.plotBoxes_2D_noFill(Rb,1,2,'b');
-hold on;
-plot(yyy(1,:),yyy(2,:),'r');
-xlabel('x_1');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj1.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,1,tvec,'b');
-hold on;
-plot(tvec,yyy(1,:),'r');
-xlabel('Time (s)');
-ylabel('x_1');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj1_1.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,2,tvec,'b');
-hold on;
-plot(tvec,yyy(2,:),'r');
-xlabel('Time (s)');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj1_2.png');
-
-%% Reachability run #2
-% Setup
-x0 = [2.4714;0.3462]; % Initial state second trajectory
-unc = 0.01;
-lb = x0-unc;
-ub = x0+unc;
-R0 = Star(lb,ub);
-
-t = tic;
-Rb = neuralode.reach(R0); % Reachability
-tb = toc(t);
-yyy = neuralode.evaluate(x0); % Simulation
-
-% Plot results
-f = figure;
-Star.plotBoxes_2D_noFill(Rb,1,2,'b');
-hold on;
-plot(yyy(1,:),yyy(2,:),'r');
-xlabel('x_1');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj2.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,1,tvec,'b');
-hold on;
-plot(tvec,yyy(1,:),'r');
-xlabel('Time (s)');
-ylabel('x_1');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj2_1.png');
-
-f = figure;
-Star.plotRanges_2D(Rb,2,tvec,'b');
-hold on;
-plot(tvec,yyy(2,:),'r');
-xlabel('Time (s)');
-ylabel('x_2');
-ax = gca; % Get current axis
-ax.XAxis.FontSize = 15; % Set font size of axis
-ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj2_2.png');
-
-%% Reachability run #3
+%% Reachability
 % Setup
 x0 = [0.2647;-0.0339]; % Initial state third trajectory
 unc = 0.01;
@@ -148,7 +55,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj3.png');
+saveas(f,'DampedOsc_ilnode.png');
 
 f = figure;
 Star.plotRanges_2D(Rb,1,tvec,'b');
@@ -159,7 +66,7 @@ ylabel('x_1');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj3_1.png');
+saveas(f,'DampedOsc_ilnode_x1.png');
 
 f = figure;
 Star.plotRanges_2D(Rb,2,tvec,'b');
@@ -170,9 +77,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_long7_traj3_2.png');
+saveas(f,'DampedOsc_ilnode_x2.png');
 
 %% Save results
-% May want to set equal axes so that the set representations are equally
-% visualized
-save('reach7_long.mat','ta','tb','tc');
+save('reach.mat','tc','Rb');
