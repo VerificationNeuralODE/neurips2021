@@ -35,7 +35,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'nonlinearspiral_0.1.png')
+saveas(f,'nonlinearspiral_0.1.pdf')
 
 %% Save results
 save('reach.mat','tb','R2');

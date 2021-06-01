@@ -53,7 +53,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.1.png');
+saveas(f,'spirallinear_0.1.pdf');
 
 % f = figure;
 % Star.plotRanges_2D(Rb,1,tvec,'b');
@@ -95,7 +95,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'spirallinear_0.2.png');
+saveas(f,'spirallinear_0.2.pdf');
 
 % f = figure;
 % Star.plotRanges_2D(Rb,1,tvec,'b');

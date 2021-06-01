@@ -7,4 +7,4 @@ cd ffnn;
 run run_all.m;
 
 cd ..
-run create_table.
+run create_table.m;

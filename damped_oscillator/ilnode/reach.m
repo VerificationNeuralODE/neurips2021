@@ -55,7 +55,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_ilnode.png');
+saveas(f,'DampedOsc_ilnode.pdf');
 
 f = figure;
 Star.plotRanges_2D(Rb,1,tvec,'b');
@@ -66,7 +66,7 @@ ylabel('x_1');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_ilnode_x1.png');
+saveas(f,'DampedOsc_ilnode_x1.pdf');
 
 f = figure;
 Star.plotRanges_2D(Rb,2,tvec,'b');
@@ -77,7 +77,7 @@ ylabel('x_2');
 ax = gca; % Get current axis
 ax.XAxis.FontSize = 15; % Set font size of axis
 ax.YAxis.FontSize = 15;
-saveas(f,'DampedOsc_ilnode_x2.png');
+saveas(f,'DampedOsc_ilnode_x2.pdf');
 
 %% Save results
 save('reach.mat','tc','Rb');

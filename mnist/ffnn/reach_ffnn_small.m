@@ -143,6 +143,6 @@ if cora
     save('ffnn_small_cora.mat','rob','pred','timeT','pix','numT','noise');
 
     % Notify finish
-    sound(tan(1:3000));
+%     sound(tan(1:3000));
 end
 end

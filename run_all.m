@@ -1,13 +1,13 @@
 % Temporarily disable MATLAB figures from displaying the plots
 set(0,'DefaultFigureVisible','off');
-
+t = tic;
 % 1 - Spiral 2D experiments
 disp('Spiral 2D');
 cd spiral2d/linear;
 run reach.m; % Execute linearTS
 cd ../nonlinear;
 run reach.m; % Execute nonlinearTS
-cd ../..
+cd ../..;
 
 % 2 - Damped Oscillator
 disp('Damped Oscillator');
@@ -20,6 +20,10 @@ run reach.m % Executes sonode experiment
 cd ../..
 
 % 3 - MNIST
+disp('MNIST');
 cd mnist;
 addpath('data');
 run run_both.m; % Execute all mnist experiments 
+toc(t);
+
+cd ..;

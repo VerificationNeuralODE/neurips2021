@@ -120,7 +120,7 @@ disp('Total time = ' + string(timeT));
 save("cnn_tiny_nnv_"+string(noise)+".mat",'rob','rob_ode','timeT','pix','numT','noise');
 
 % Notify finish
-sound(tan(1:3000));
+% sound(tan(1:3000));
 
 
 %% Section 2. ODEblock with CORA reachability
@@ -183,5 +183,5 @@ if cora
 end
 
 % Notify finish
-sound(tan(1:3000));
+% sound(tan(1:3000));
 end

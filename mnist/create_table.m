@@ -8,8 +8,8 @@ names = {'fnn_small';'fnn_mid';'fnn_large';'cnn_small';'cnn_mid';'cnn_large'};
 fnl = load(files_to_load{1}+"_12.75.mat");
 fnm = load(files_to_load{2}+"_12.75.mat");
 fns = load(files_to_load{3}+"_12.75.mat");
-cnl = load(files_to_load{4}+"12.75.mat");
-cnm = load(files_to_load{5}+"12.75.mat");
+cnl = load(files_to_load{4}+"_12.75.mat");
+cnm = load(files_to_load{5}+"_12.75.mat");
 cns = load(files_to_load{6}+"_12.75.mat");
 evalf = load(files_to_load{7});
 evalc = load(files_to_load{8});
@@ -22,8 +22,8 @@ timeA = [fns.timeT/fns.numT;fnm.timeT/fnm.numT;fnl.timeT/fnl.numT;cns.timeT/cns.
 fnl = load(files_to_load{1}+"_25.5.mat");
 fnm = load(files_to_load{2}+"_25.5.mat");
 fns = load(files_to_load{3}+"_25.5.mat");
-cnl = load(files_to_load{4}+"25.5.mat");
-cnm = load(files_to_load{5}+"25.5.mat");
+cnl = load(files_to_load{4}+"_25.5.mat");
+cnm = load(files_to_load{5}+"_25.5.mat");
 cns = load(files_to_load{6}+"_25.5.mat");
 
 % Create columns
