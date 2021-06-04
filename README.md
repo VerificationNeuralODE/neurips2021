@@ -4,7 +4,7 @@
 
 ### Installation and setup.
 
-Go to the modified nnv repository [VerificationNeuralODE/nnv](https://github.com/VerificationNeuralODE/nnv) and follow the instructions on the Readme to install the dependencies and detup NNV.
+Go to the modified nnv repository [VerificationNeuralODE/nnv](https://github.com/VerificationNeuralODE/nnv) and follow the instructions on the Readme to install the dependencies and set up NNV.
 
 ###### Notes
  - Execution without installation will not work in this case as our nnv version is not in sync with the main branch of [verivital/nnv](https://github.com/verivital/nnv).
